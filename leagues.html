@@ -1,0 +1,37 @@
+---
+layout: default
+title: Leagues
+description: Upcoming Send It Athletics volleyball leagues, schedules, and registration.
+permalink: /leagues.html
+---
+<header class="page-header">
+  <div class="container">
+    <h1 class="page-title">Leagues</h1>
+    <p class="page-description">Find your division, check availability, and register for the upcoming season.</p>
+  </div>
+</header>
+
+<section class="section">
+  <div class="container">
+    <div class="leagues-header">
+      <span class="leagues-season">{{ site.data.site.season_name }}</span>
+      <p class="leagues-dates">{{ site.data.site.season_days }}</p>
+      <p class="leagues-range">
+        Starts: <strong>{{ site.data.site.season_start }}</strong> &bull;
+        Ends: <strong>{{ site.data.site.season_end }}</strong>
+      </p>
+      <p class="leagues-range">{{ site.data.site.league_duration }}</p>
+    </div>
+
+  {% assign sorted_leagues = site.leagues | sort: 'order' %}
+    <div class="league-grid">
+      {% for league in sorted_leagues %}
+        {% include league-card.html league=league %}
+      {% endfor %}
+    </div>
+
+    <div class="leagues-cta">
+      <a href="{{ site.data.site.registration_url }}" class="btn btn-primary" target="_blank" rel="noopener noreferrer">Register Now</a>
+    </div>
+  </div>
+</section>

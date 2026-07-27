@@ -1,0 +1,38 @@
+---
+layout: default
+title: Contact Us
+description: Get in touch with Send It Athletics.
+permalink: /contact.html
+---
+<header class="page-header">
+  <div class="container">
+    <h1 class="page-title">Contact Us</h1>
+    <p class="page-description">Questions about leagues, registration, or the season? Reach out below.</p>
+  </div>
+</header>
+
+<section class="section">
+  <div class="container">
+    <div class="contact-grid">
+      <div class="contact-card">
+        <h2>Facebook Group</h2>
+        <p>Join our community for the latest updates, schedules, and league chat.</p>
+        <a href="{{ site.data.site.facebook_url }}" class="btn btn-primary" target="_blank" rel="noopener noreferrer">Join Facebook Group</a>
+      </div>
+
+      {% if site.data.site.contact_email %}
+      <div class="contact-card">
+        <h2>Email</h2>
+        <p>Send us a message and we'll get back to you as soon as we can.</p>
+        <a href="mailto:{{ site.data.site.contact_email }}">{{ site.data.site.contact_email }}</a>
+      </div>
+      {% endif %}
+
+      <div class="contact-card">
+        <h2>Registration</h2>
+        <p>Ready to play? Head to our registration page to sign up for the current season.</p>
+        <a href="{{ site.data.site.registration_url }}" class="btn btn-secondary" target="_blank" rel="noopener noreferrer">Register for a League</a>
+      </div>
+    </div>
+  </div>
+</section>

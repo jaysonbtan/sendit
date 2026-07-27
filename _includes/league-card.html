@@ -1,0 +1,24 @@
+{% assign league = include.league %}
+{% assign league_status = league.status | default: 'open' %}
+{% if league_status == 'full' %}
+  {% assign league_status = 'closed' %}
+{% endif %}
+
+{% assign league_type = league.type | default: league.format %}
+{% assign league_location = league.location | upcase %}
+{% assign league_day = league.day | upcase %}
+
+<article class="league-card{% if league_status == 'closed' %} league-card--full{% endif %}">
+  <div class="league-card__header">{{ league_type | upcase }}</div>
+  <div class="league-card__body">
+    <p class="league-card__location">{{ league_location }}</p>
+    <p class="league-card__time">{{ league.time }}</p>
+    {% if league_day %}
+    <p class="league-card__day">{{ league_day }}</p>
+    {% endif %}
+  </div>
+  <div class="league-card__accent"></div>
+  {% if league_status == 'closed' %}
+  <div class="league-card__overlay" aria-label="Registration closed">FULL</div>
+  {% endif %}
+</article>

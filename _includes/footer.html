@@ -1,0 +1,15 @@
+<footer class="site-footer">
+  <div class="container footer-inner">
+    <div class="footer-brand">
+      <img src="{{ '/assets/images/sendit-logo.png' | relative_url }}" alt="" class="footer-logo" width="32" height="32">
+      <span class="footer-title">Send It Athletics</span>
+    </div>
+    <div class="footer-links">
+      <a href="{{ site.data.site.facebook_url }}" target="_blank" rel="noopener noreferrer">Facebook Group</a>
+      {% if site.data.site.contact_email %}
+      <a href="mailto:{{ site.data.site.contact_email }}">{{ site.data.site.contact_email }}</a>
+      {% endif %}
+    </div>
+    <p class="footer-copy">&copy; {{ 'now' | date: "%Y" }} Send It Athletics. All rights reserved.</p>
+  </div>
+</footer>

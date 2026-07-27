@@ -1,0 +1,21 @@
+<header class="site-header">
+  <div class="container header-inner">
+    <a href="{{ '/' | relative_url }}" class="logo-link">
+      <img src="{{ '/assets/images/sendit-logo.png' | relative_url }}" alt="Send It Athletics logo" class="logo-mark" width="48" height="48">
+      <img src="{{ '/assets/images/sendit-wordmark.png' | relative_url }}" alt="Send It Athletics" class="logo-wordmark" width="160" height="40">
+    </a>
+    <button class="nav-toggle" aria-label="Toggle navigation" aria-expanded="false">
+      <span></span>
+      <span></span>
+      <span></span>
+    </button>
+    <nav class="site-nav" aria-label="Main navigation">
+      <ul class="nav-list">
+        <li><a href="{{ '/' | relative_url }}" {% if page.url == '/' or page.url == '/index.html' %}aria-current="page"{% endif %}>Home</a></li>
+        <li><a href="{{ '/leagues.html' | relative_url }}" {% if page.url == '/leagues.html' or page.permalink == '/leagues.html' %}aria-current="page"{% endif %}>Leagues</a></li>
+        <li><a href="{{ '/blog.html' | relative_url }}" {% if page.url == '/blog.html' or page.permalink == '/blog.html' or page.layout == 'post' %}aria-current="page"{% endif %}>Announcements</a></li>
+        <li><a href="{{ '/contact.html' | relative_url }}" {% if page.url == '/contact.html' or page.permalink == '/contact.html' %}aria-current="page"{% endif %}>Contact</a></li>
+      </ul>
+    </nav>
+  </div>
+</header>

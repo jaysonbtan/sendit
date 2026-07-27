@@ -1,0 +1,114 @@
+---
+layout: home
+title: Home
+---
+{% assign featured_post = site.posts | first %}
+
+<section class="home-hero" aria-label="Introduction">
+  <img class="home-hero__bg" src="{{ '/assets/images/home/hero-bg.png' | relative_url }}" alt="" width="1720" height="728" decoding="async">
+  <div class="home-hero__content">
+    <div class="home-hero__brand">
+      <img class="home-hero__logo" src="{{ '/assets/images/home/sendit-logo.svg' | relative_url }}" alt="" width="160" height="160">
+      <img class="home-hero__wordmark" src="{{ '/assets/images/home/sendit-wordmark.svg' | relative_url }}" alt="Send It Athletics" width="349" height="100">
+    </div>
+    <p class="home-hero__tagline">{{ site.data.site.hero_tagline }}</p>
+    <a href="{{ '/leagues.html' | relative_url }}" class="btn btn--primary">Join a League</a>
+  </div>
+</section>
+
+<section class="home-section home-section--announcement">
+  <div class="home-container">
+    {% if featured_post %}
+    <a href="{{ featured_post.url | relative_url }}" class="announcement-card">
+      <div class="announcement-card__top">
+        <span class="announcement-card__label">Announcement</span>
+        <span class="announcement-card__meta">
+          <time datetime="{{ featured_post.date | date: '%Y-%m-%d' }}">{{ featured_post.date | date: "%b %-d, %Y" }}</time>
+          {% include lucide-icon.html name="arrow-right" size=24 class="icon-action" %}
+        </span>
+      </div>
+      <h2 class="announcement-card__title">{{ featured_post.title }}</h2>
+      <p class="announcement-card__body">{{ featured_post.excerpt | default: featured_post.content | strip_html | truncate: 160 }}</p>
+    </a>
+    {% else %}
+    <article class="announcement-card">
+      <div class="announcement-card__top">
+        <span class="announcement-card__label">Announcement</span>
+        <span class="announcement-card__meta">
+          <time datetime="2026-09-07">Sep 7, 2026</time>
+          {% include lucide-icon.html name="arrow-right" size=24 class="icon-action" %}
+        </span>
+      </div>
+      <h2 class="announcement-card__title">Grass cancelled today</h2>
+      <p class="announcement-card__body">Due to inclement weather, all grass volleyball games today have been cancelled. We will pick it up again next week. Stay safe out there!</p>
+    </article>
+    {% endif %}
+  </div>
+</section>
+
+<section class="home-section" aria-labelledby="home-leagues-heading">
+  <div class="home-container home-container--leagues">
+    <h2 id="home-leagues-heading" class="home-section__title">{{ site.data.site.season_name | default: "Fall 2026 Leagues" }}</h2>
+    <div class="league-card-grid">
+      {% assign sorted_leagues = site.leagues | sort: 'order' %}
+      {% for league in sorted_leagues %}
+        {% include league-card-home.html league=league %}
+      {% endfor %}
+    </div>
+  </div>
+</section>
+
+<section class="home-section" aria-labelledby="home-contact-heading">
+  <div class="home-container">
+    <div class="home-section__intro">
+      <h2 id="home-contact-heading" class="home-section__title">Contact Info</h2>
+      <p class="home-section__subtitle">Have questions about any of our leagues? Get in touch with us directly!</p>
+    </div>
+    <div class="contact-card-grid">
+      <div class="contact-card-home">
+        <div class="contact-card-home__icon-wrap">
+          {% include lucide-icon.html name="mail" size=40 %}
+        </div>
+        <div class="contact-card-home__text">
+          <p class="contact-card-home__label contact-card-home__label--yellow">Email</p>
+          <p class="contact-card-home__value">{{ site.data.site.contact_email }}</p>
+        </div>
+        <button type="button" class="contact-card-home__action" data-copy="{{ site.data.site.contact_email }}" aria-label="Copy email address">
+          {% include lucide-icon.html name="copy" size=24 class="icon-action" %}
+        </button>
+      </div>
+      <a href="{{ site.data.site.facebook_url }}" class="contact-card-home" target="_blank" rel="noopener noreferrer">
+        <div class="contact-card-home__icon-wrap">
+          {% include lucide-icon.html name="facebook" size=40 %}
+        </div>
+        <div class="contact-card-home__text">
+          <p class="contact-card-home__label contact-card-home__label--orange">Facebook</p>
+          <p class="contact-card-home__value">{{ site.data.site.facebook_handle | default: "senditathletics" }}</p>
+        </div>
+        {% include lucide-icon.html name="external-link" size=24 class="icon-action" %}
+      </a>
+      <a href="{{ site.data.site.instagram_url | default: '#' }}" class="contact-card-home" target="_blank" rel="noopener noreferrer">
+        <div class="contact-card-home__icon-wrap">
+          {% include lucide-icon.html name="instagram" size=40 %}
+        </div>
+        <div class="contact-card-home__text">
+          <p class="contact-card-home__label contact-card-home__label--red">Instagram</p>
+          <p class="contact-card-home__value">{{ site.data.site.instagram_handle | default: "@senditathletics" }}</p>
+        </div>
+        {% include lucide-icon.html name="external-link" size=24 class="icon-action" %}
+      </a>
+    </div>
+  </div>
+</section>
+
+<section class="home-cta" aria-label="Call to action">
+  <div class="home-container home-cta__container">
+    <div class="home-cta__visual">
+      <img class="home-cta__bg" src="{{ '/assets/images/home/cta-bg.png' | relative_url }}" alt="" width="1264" height="632" loading="lazy">
+      <div class="home-cta__overlay"></div>
+      <p class="home-cta__text">
+        <span>Ready to </span><span class="home-cta__accent">Send It?</span>
+      </p>
+    </div>
+  </div>
+</section>

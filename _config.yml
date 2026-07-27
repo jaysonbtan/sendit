@@ -1,0 +1,34 @@
+title: Send It Athletics
+description: Volleyball leagues in the greater Vancouver area. Co-ed 6's and recreational play.
+url: "https://jaysonbtan.github.io"
+baseurl: "/sendit"
+
+markdown: kramdown
+kramdown:
+  input: GFM
+
+permalink: /blog/:year/:month/:day/:title/
+
+collections:
+  leagues:
+    output: false
+
+defaults:
+  - scope:
+      path: ""
+      type: "posts"
+    values:
+      layout: "post"
+  - scope:
+      path: ""
+      type: "leagues"
+    values:
+      layout: null
+
+exclude:
+  - Gemfile
+  - Gemfile.lock
+  - README.md
+  - vendor
+  - package.json
+  - bin

@@ -1,0 +1,9 @@
+{
+  "name": "sendit-athletics",
+  "private": true,
+  "scripts": {
+    "dev": "./bin/dev",
+    "build": "./bin/build",
+    "preview": "./bin/build && npx --yes serve _site -l 4000"
+  }
+}

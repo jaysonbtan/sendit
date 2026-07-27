@@ -1,0 +1,41 @@
+{% assign league = include.league %}
+{% assign league_status = league.status | default: 'open' %}
+{% if league_status == 'full' %}
+  {% assign league_status = 'closed' %}
+{% endif %}
+
+{% assign league_image = '/assets/images/home/league-creekside.png' %}
+{% if league.location == 'Byrne Creek' %}
+  {% assign league_image = '/assets/images/home/league-byrne-2.png' %}
+{% elsif league.location == 'Beaconsfield' %}
+  {% assign league_image = '/assets/images/home/league-byrne-1.png' %}
+{% endif %}
+
+{% assign league_type = league.type | default: league.format %}
+{% assign league_dates = league.date_range | default: league.dates %}
+{% assign league_registration_url = league.registration_url | default: site.data.site.registration_url %}
+
+<article class="league-card-home{% if league_status == 'closed' %} league-card-home--closed{% endif %}">
+  <div class="league-card-home__media">
+    <img src="{{ league_image | relative_url }}" alt="" width="400" height="160" loading="lazy">
+  </div>
+  <div class="league-card-home__body">
+    <div class="league-card-home__info">
+      <h3 class="league-card-home__name">{{ league.title }}</h3>
+      <p class="league-card-home__meta">
+        <span class="league-card-home__format">{{ league_type }}</span>
+        {% if league_dates %}
+        <span class="league-card-home__dates">{{ league_dates }}</span>
+        {% endif %}
+      </p>
+      <p class="league-card-home__time">{{ league.time }}</p>
+    </div>
+    {% if league_status == 'closed' %}
+    <span class="btn btn--disabled btn--block" aria-disabled="true">Registration Closed</span>
+    {% elsif league_status == 'waitlist' %}
+    <a href="{{ league_registration_url }}" class="btn btn--secondary btn--block" target="_blank" rel="noopener noreferrer">Join Waitlist</a>
+    {% else %}
+    <a href="{{ league_registration_url }}" class="btn btn--primary btn--block" target="_blank" rel="noopener noreferrer">Register Now</a>
+    {% endif %}
+  </div>
+</article>

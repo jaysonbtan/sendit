@@ -1,0 +1,86 @@
+backend:
+  name: github
+  repo: jaysonbtan/sendit
+  branch: main
+  base_url: https://sendit-cms-auth.YOUR_SUBDOMAIN.workers.dev
+  auth_endpoint: auth
+
+media_folder: "assets/images/uploads"
+public_folder: "/assets/images/uploads"
+
+publish_mode: editorial_workflow
+
+site_url: https://jaysonbtan.github.io/sendit
+display_url: https://jaysonbtan.github.io/sendit
+logo_url: /assets/images/sendit-logo.png
+
+collections:
+  - name: "site_settings"
+    label: "Site Settings"
+    files:
+      - label: "General Settings"
+        name: "site"
+        file: "_data/site.yml"
+        fields:
+          - { label: "Season Name", name: "season_name", widget: "string", hint: "e.g. SUMMER 2026 SEASON" }
+          - { label: "Season Days", name: "season_days", widget: "string", hint: "e.g. SATURDAYS & SUNDAYS" }
+          - { label: "Season Start", name: "season_start", widget: "string", hint: "e.g. MAY 2ND" }
+          - { label: "Season End", name: "season_end", widget: "string", hint: "e.g. AUGUST 23RD" }
+          - { label: "League Duration", name: "league_duration", widget: "string", hint: "e.g. 14 WEEK LEAGUE" }
+          - { label: "Registration URL", name: "registration_url", widget: "string" }
+          - { label: "Contact Email", name: "contact_email", widget: "string" }
+          - { label: "Facebook URL", name: "facebook_url", widget: "string" }
+          - { label: "Facebook Handle", name: "facebook_handle", widget: "string" }
+          - { label: "Instagram URL", name: "instagram_url", widget: "string" }
+          - { label: "Instagram Handle", name: "instagram_handle", widget: "string" }
+          - { label: "Home Page Tagline", name: "hero_tagline", widget: "text" }
+
+  - name: "leagues"
+    label: "Leagues"
+    folder: "_leagues"
+    create: true
+    slug: "{{slug}}"
+    extension: md
+    format: frontmatter
+    summary: "{{title}}"
+    fields:
+      - { label: "Title", name: "title", widget: "string", hint: "e.g. Creekside Saturdays" }
+      - label: "Type"
+        name: "type"
+        widget: "select"
+        options:
+          - "Co-Ed 6's"
+          - "Reverse 4"
+      - { label: "Date Range", name: "date_range", widget: "string", hint: "e.g. Sep 23 - Dec 24" }
+      - { label: "Time", name: "time", widget: "string", hint: "e.g. 5:15 - 7:45 pm" }
+      - label: "Location"
+        name: "location"
+        widget: "select"
+        options:
+          - Creekside
+          - Beaconsfield
+          - "Byrne Creek"
+      - label: "Status"
+        name: "status"
+        widget: "select"
+        default: open
+        options:
+          - { label: "Registration Open", value: "open" }
+          - { label: "Waitlist", value: "waitlist" }
+          - { label: "Closed", value: "closed" }
+      - { label: "Registration Link", name: "registration_url", widget: "string", hint: "Google Form or external registration URL" }
+      - { label: "Display Order", name: "order", widget: "number", value_type: "int", min: 1, default: 1 }
+
+  - name: "announcements"
+    label: "Announcements"
+    folder: "_posts"
+    create: true
+    slug: "{{year}}-{{month}}-{{day}}-{{slug}}"
+    extension: md
+    format: frontmatter
+    fields:
+      - { label: "Layout", name: "layout", widget: "hidden", default: "post" }
+      - { label: "Title", name: "title", widget: "string" }
+      - { label: "Publish Date", name: "date", widget: "datetime" }
+      - { label: "Excerpt", name: "excerpt", widget: "text", hint: "Short summary shown on the home page and blog index" }
+      - { label: "Body", name: "body", widget: "markdown" }

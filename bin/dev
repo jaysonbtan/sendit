@@ -1,0 +1,19 @@
+#!/usr/bin/env bash
+set -euo pipefail
+
+ROOT="$(cd "$(dirname "$0")/.." && pwd)"
+cd "$ROOT"
+
+# Prefer Homebrew Ruby (system Ruby 2.6 is too old for Jekyll 4)
+if [ -d "/opt/homebrew/opt/ruby/bin" ]; then
+  export PATH="/opt/homebrew/opt/ruby/bin:/opt/homebrew/lib/ruby/gems/4.0.0/bin:$PATH"
+fi
+
+if ! command -v bundle >/dev/null 2>&1; then
+  echo "Bundler not found. Run: gem install bundler && bundle install"
+  exit 1
+fi
+
+bundle check >/dev/null 2>&1 || bundle install
+
+exec bundle exec jekyll serve --livereload --baseurl ""

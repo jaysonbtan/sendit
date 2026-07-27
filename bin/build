@@ -1,0 +1,12 @@
+#!/usr/bin/env bash
+set -euo pipefail
+
+ROOT="$(cd "$(dirname "$0")/.." && pwd)"
+cd "$ROOT"
+
+if [ -d "/opt/homebrew/opt/ruby/bin" ]; then
+  export PATH="/opt/homebrew/opt/ruby/bin:/opt/homebrew/lib/ruby/gems/4.0.0/bin:$PATH"
+fi
+
+bundle check >/dev/null 2>&1 || bundle install
+bundle exec jekyll build
