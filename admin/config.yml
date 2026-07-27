@@ -84,6 +84,22 @@ collections:
           - { label: "Instagram Handle", name: "instagram_handle", widget: "string" }
           - { label: "Home Page Tagline", name: "hero_tagline", widget: "text" }
 
+  - name: "locations"
+    label: "Locations"
+    label_singular: "Location"
+    folder: "_locations"
+    create: true
+    delete: true
+    slug: "{{slug}}"
+    extension: md
+    format: frontmatter
+    summary: "{{title}}"
+    sortable_fields: ["order", "title"]
+    fields:
+      - { label: "Name", name: "title", widget: "string", hint: "e.g. Creekside" }
+      - { label: "Thumbnail Image", name: "image", widget: "image", hint: "Shown on league cards for this location" }
+      - { label: "Display Order", name: "order", widget: "number", value_type: "int", min: 1, default: 1 }
+
   - name: "leagues"
     label: "Leagues"
     folder: "_leagues"
@@ -104,11 +120,12 @@ collections:
       - { label: "Time", name: "time", widget: "string", hint: "e.g. 5:15 - 7:45 pm" }
       - label: "Location"
         name: "location"
-        widget: "select"
-        options:
-          - Creekside
-          - Beaconsfield
-          - "Byrne Creek"
+        widget: "relation"
+        collection: "locations"
+        searchFields: ["title"]
+        valueField: "title"
+        displayFields: ["title"]
+        hint: "Choose a location — its thumbnail image is used on the league card"
       - label: "Status"
         name: "status"
         widget: "select"

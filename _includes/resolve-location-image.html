@@ -1,0 +1,9 @@
+{% assign location_image = include.fallback | default: '/assets/images/home/league-creekside.png' %}
+{% if include.location %}
+  {% for loc in site.locations %}
+    {% if loc.title == include.location and loc.image %}
+      {% assign location_image = loc.image %}
+      {% break %}
+    {% endif %}
+  {% endfor %}
+{% endif %}

@@ -4,12 +4,7 @@
   {% assign league_status = 'closed' %}
 {% endif %}
 
-{% assign league_image = '/assets/images/home/league-creekside.png' %}
-{% if league.location == 'Byrne Creek' %}
-  {% assign league_image = '/assets/images/home/league-byrne-2.png' %}
-{% elsif league.location == 'Beaconsfield' %}
-  {% assign league_image = '/assets/images/home/league-byrne-1.png' %}
-{% endif %}
+{% include resolve-location-image.html location=league.location %}
 
 {% assign league_type = league.type | default: league.format %}
 {% assign league_dates = league.date_range | default: league.dates %}
@@ -17,7 +12,7 @@
 
 <article class="league-card-home{% if league_status == 'closed' %} league-card-home--closed{% endif %}">
   <div class="league-card-home__media">
-    <img src="{{ league_image | relative_url }}" alt="" width="400" height="160" loading="lazy">
+    <img src="{{ location_image | relative_url }}" alt="" width="400" height="160" loading="lazy">
   </div>
   <div class="league-card-home__body">
     <div class="league-card-home__info">

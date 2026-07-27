@@ -12,6 +12,8 @@ permalink: /blog/:year/:month/:day/:title/
 collections:
   leagues:
     output: false
+  locations:
+    output: false
 
 defaults:
   - scope:
@@ -22,6 +24,11 @@ defaults:
   - scope:
       path: ""
       type: "leagues"
+    values:
+      layout: null
+  - scope:
+      path: ""
+      type: "locations"
     values:
       layout: null
 
