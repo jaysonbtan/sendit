@@ -1,0 +1,11 @@
+/* Collection list tables — use Send It background-secondary (#131312) */
+.CMS_Entries_entry-listing-table,
+.CMS_Table_header-cell-content,
+.CMS_Table_body-row {
+  background: var(--background-light);
+}
+
+.CMS_Table_body-row:focus,
+.CMS_Table_body-row:hover {
+  background: color-mix(in srgb, var(--primary-main) 15%, var(--background-light));
+}
