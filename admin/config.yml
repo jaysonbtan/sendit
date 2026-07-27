@@ -2,7 +2,7 @@ backend:
   name: github
   repo: jaysonbtan/sendit
   branch: main
-  base_url: https://sendit-cms-auth.YOUR_SUBDOMAIN.workers.dev
+  base_url: https://decap-cms-github-oauth-api.jaysonbtan.workers.dev
   auth_endpoint: auth
 
 media_folder: "assets/images/uploads"
