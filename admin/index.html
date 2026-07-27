@@ -7,8 +7,17 @@
     <link rel="stylesheet" href="https://unpkg.com/@staticcms/app@^4.0.0/dist/main.css" />
     <link rel="icon" href="../assets/images/home/sendit-logo.svg" type="image/svg+xml" />
     <title>Send It Athletics — Content Manager</title>
+    <link href="config.yml" type="text/yaml" rel="cms-config-url" />
   </head>
   <body>
+    <script>
+      (function () {
+        var path = window.location.pathname;
+        if (!path.endsWith("/")) {
+          window.location.replace(path + "/" + window.location.search + window.location.hash);
+        }
+      })();
+    </script>
     <script src="https://unpkg.com/@staticcms/app@^4.0.0/dist/static-cms-app.js"></script>
     <script>window.CMS.init();</script>
   </body>
