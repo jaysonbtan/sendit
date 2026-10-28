@@ -39,45 +39,45 @@
   --text-body-lg-weight: 400;
   --text-body-lg-strong-weight: 550;
 
-  /* Headings — size / line-height (Figma: size / %) */
-  --text-heading-2xl-size: 4rem;
-  --text-heading-2xl-line: 1.1;
-  --text-heading-2xl-tracking: -0.03em;
+  /* Heading scale — edit letter-spacing here; see headings.css for where each size is used */
+  --heading-weight: 800;
 
-  --text-heading-xl-size: 3rem;
-  --text-heading-xl-line: 1.1;
-  --text-heading-xl-tracking: -0.03em;
+  /* heading-2xl — Home CTA “Ready to Send It?”; Leagues page sold-out overlay */
+  --heading-2xl-size: 4rem;
+  --heading-2xl-size-fluid: clamp(3rem, 8vw, 5.75rem);
+  --heading-2xl-line-height: 1.1;
+  --heading-2xl-letter-spacing: -0.0075em;
 
-  --text-heading-lg-size: 2.5rem;
-  --text-heading-lg-line: 1.15;
-  --text-heading-lg-tracking: -0.02em;
+  /* heading-xl — Home section titles; page titles (Leagues, Blog, Contact); post article title */
+  --heading-xl-size: 3rem;
+  --heading-xl-line-height: 1.1;
+  --heading-xl-letter-spacing: -0.0075em;
 
-  --text-heading-md-size: 2rem;
-  --text-heading-md-line: 1.2;
-  --text-heading-md-tracking: -0.02em;
+  /* heading-lg — Legacy section titles; Leagues page season days; blog list titles; post body h2; league card location */
+  --heading-lg-size: 2rem;
+  --heading-lg-line-height: 1.2;
+  --heading-lg-letter-spacing: -0.005em;
 
-  --text-heading-sm-size: 1.5rem;
-  --text-heading-sm-line: 1.25;
-  --text-heading-sm-tracking: -0.02em;
+  /* heading-md — Announcement card titles; home league names; legacy league card header; contact page card h2 */
+  --heading-md-size: 1.5rem;
+  --heading-md-line-height: 1.25;
+  --heading-md-letter-spacing: 0.01em;
 
-  --text-heading-xs-size: 1.25rem;
-  --text-heading-xs-line: 1.3;
-  --text-heading-xs-tracking: -0.01em;
+  /* heading-sm — Contact card labels; league time/day; season badge pills; footer brand name */
+  --heading-sm-size: 1.25rem;
+  --heading-sm-line-height: 1.3;
+  --heading-sm-letter-spacing: -0.0025em;
 
-  --text-heading-weight: 800;
-
-  /* Hero tagline (24px in Figma) */
+  /* Hero tagline (Instrument Sans, not heading scale) */
   --text-hero-tagline-size: 1.5rem;
   --text-hero-tagline-line: 1.2;
   --text-hero-tagline-tracking: -0.03em;
 
-  /* CTA display */
-  --text-display-cta-size: clamp(3rem, 8vw, 5.75rem);
-  --text-display-cta-line: 1.1;
-  --text-display-cta-tracking: -0.03em;
-
   /* Layout */
   --container-max: 80rem;
+  --hero-art-max: 120rem; /* 1920px — hero illustration cap */
+  --hero-art-max-height: 45.5rem; /* 728px */
+  --hero-art-scale: 1;
   --container-padding: 1.25rem;
   --section-padding-y: 5.75rem;
   --section-padding-y-sm: 2rem;

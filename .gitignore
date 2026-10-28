@@ -7,6 +7,7 @@ vendor/
 Gemfile.lock
 *.gem
 .DS_Store
+node_modules/
 
 # Cloudflare OAuth worker (deployed separately, not part of the site)
 decap-cms-github-oauth-provider-cloudflare/

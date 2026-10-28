@@ -1,0 +1,91 @@
+/**
+ * Heading scale — Barlow Condensed, weight 800.
+ * Tune size and letter-spacing in tokens.css (--heading-*).
+ */
+
+.heading-2xl,
+.home-cta__text,
+.league-card__overlay {
+  font-family: var(--font-family-heading);
+  font-size: var(--heading-2xl-size);
+  font-weight: var(--heading-weight);
+  line-height: var(--heading-2xl-line-height);
+  letter-spacing: var(--heading-2xl-letter-spacing);
+}
+
+/* Home CTA only — fluid size on top of heading-2xl */
+.home-cta__text {
+  font-size: var(--heading-2xl-size-fluid);
+}
+
+.heading-xl,
+.home-section__title,
+.page-title,
+.post-title {
+  font-family: var(--font-family-heading);
+  font-size: var(--heading-xl-size);
+  font-weight: var(--heading-weight);
+  line-height: var(--heading-xl-line-height);
+  letter-spacing: var(--heading-xl-letter-spacing);
+}
+
+.heading-lg,
+.section-title,
+.leagues-dates,
+.post-list-title,
+.post-body h2,
+.league-card__location {
+  font-family: var(--font-family-heading);
+  font-size: var(--heading-lg-size);
+  font-weight: var(--heading-weight);
+  line-height: var(--heading-lg-line-height);
+  letter-spacing: var(--heading-lg-letter-spacing);
+}
+
+.heading-md,
+.announcement-card__title,
+.announcement-title,
+.league-card-home__name,
+.league-card__header,
+.contact-card h2 {
+  font-family: var(--font-family-heading);
+  font-size: var(--heading-md-size);
+  font-weight: var(--heading-weight);
+  line-height: var(--heading-md-line-height);
+  letter-spacing: var(--heading-md-letter-spacing);
+}
+
+.heading-sm,
+.contact-card-home__label,
+.league-card-home__time,
+.league-card__day,
+.leagues-season,
+.season-badge,
+.footer-title {
+  font-family: var(--font-family-heading);
+  font-size: var(--heading-sm-size);
+  font-weight: var(--heading-weight);
+  line-height: var(--heading-sm-line-height);
+  letter-spacing: var(--heading-sm-letter-spacing);
+}
+
+@media (max-width: 768px) {
+  .heading-xl,
+  .home-section__title,
+  .page-title,
+  .post-title {
+    font-size: var(--heading-lg-size);
+    line-height: var(--heading-lg-line-height);
+    letter-spacing: var(--heading-lg-letter-spacing);
+  }
+
+  .leagues-dates {
+    font-size: var(--heading-md-size);
+    line-height: var(--heading-md-line-height);
+    letter-spacing: var(--heading-md-letter-spacing);
+  }
+
+  .league-card__overlay {
+    font-size: 3rem;
+  }
+}

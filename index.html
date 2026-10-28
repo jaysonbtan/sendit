@@ -5,7 +5,7 @@ title: Home
 {% assign featured_post = site.posts | first %}
 
 <section class="home-hero" aria-label="Introduction">
-  <img class="home-hero__bg" src="{{ '/assets/images/home/hero-bg.png' | relative_url }}" alt="" width="1720" height="728" decoding="async">
+  <img class="home-hero__bg" src="{{ '/assets/images/home/hero-bg.png' | relative_url }}" alt="" width="3122" height="1456" decoding="async">
   <div class="home-hero__content">
     <div class="home-hero__brand">
       <img class="home-hero__logo" src="{{ '/assets/images/home/sendit-logo.svg' | relative_url }}" alt="" width="160" height="160">
@@ -19,24 +19,22 @@ title: Home
 <section class="home-section home-section--announcement">
   <div class="home-container">
     {% if featured_post %}
-    <a href="{{ featured_post.url | relative_url }}" class="announcement-card">
+    <article class="announcement-card">
       <div class="announcement-card__top">
         <span class="announcement-card__label">Announcement</span>
         <span class="announcement-card__meta">
           <time datetime="{{ featured_post.date | date: '%Y-%m-%d' }}">{{ featured_post.date | date: "%b %-d, %Y" }}</time>
-          {% include lucide-icon.html name="arrow-right" size=24 class="icon-action" %}
         </span>
       </div>
       <h2 class="announcement-card__title">{{ featured_post.title }}</h2>
       <p class="announcement-card__body">{{ featured_post.excerpt | default: featured_post.content | strip_html | truncate: 160 }}</p>
-    </a>
+    </article>
     {% else %}
     <article class="announcement-card">
       <div class="announcement-card__top">
         <span class="announcement-card__label">Announcement</span>
         <span class="announcement-card__meta">
           <time datetime="2026-09-07">Sep 7, 2026</time>
-          {% include lucide-icon.html name="arrow-right" size=24 class="icon-action" %}
         </span>
       </div>
       <h2 class="announcement-card__title">Grass cancelled today</h2>
