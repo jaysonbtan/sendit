@@ -1,10 +1,11 @@
 ---
 title: Creekside Sundays
-type: "Co-Ed 6's"
-date_range: "Sep 24 - Dec 25"
-time: "5:15 - 7:45 pm"
+type: Co-Ed 6's
+date_range: Jan 10 - Apr 18
+time: 5:15 - 7:45 pm
 location: Creekside
-status: waitlist
-registration_url: "https://example.com/register"
-order: 2
+status: upcoming
+opens_on: ""
+registration_url: https://example.com/register
+order: 4
 ---
