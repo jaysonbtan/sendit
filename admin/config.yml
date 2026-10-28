@@ -99,8 +99,20 @@ collections:
         default: open
         options:
           - { label: "Registration Open", value: "open" }
+          - { label: "Upcoming", value: "upcoming" }
           - { label: "Waitlist", value: "waitlist" }
           - { label: "Closed", value: "closed" }
+      - label: "Registration Opens On"
+        name: "opens_on"
+        widget: "datetime"
+        format: "yyyy-MM-dd"
+        date_format: "MMM d, yyyy"
+        time_format: false
+        picker_utc: true
+        default: ""
+        required: false
+        hint: "Shown on the card as “Registration Opens …” while the league is Upcoming"
+        condition: { field: "status", value: "upcoming" }
       - { label: "Registration Link", name: "registration_url", widget: "string", hint: "Google Form or external registration URL" }
       - { label: "Display Order", name: "order", widget: "number", value_type: "int", min: 1, default: 1 }
 
