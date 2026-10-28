@@ -1,5 +1,5 @@
 ---
 title: Beaconsfield
-image: /assets/images/home/league-byrne-1.png
+image: /assets/images/uploads/beaconsfield-2-.png
 order: 2
 ---
