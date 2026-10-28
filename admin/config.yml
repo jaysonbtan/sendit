@@ -40,10 +40,6 @@ collections:
         file: "_data/site.yml"
         fields:
           - { label: "Season Name", name: "season_name", widget: "string", hint: "e.g. SUMMER 2026 SEASON" }
-          - { label: "Season Days", name: "season_days", widget: "string", hint: "e.g. SATURDAYS & SUNDAYS" }
-          - { label: "Season Start", name: "season_start", widget: "string", hint: "e.g. MAY 2ND" }
-          - { label: "Season End", name: "season_end", widget: "string", hint: "e.g. AUGUST 23RD" }
-          - { label: "League Duration", name: "league_duration", widget: "string", hint: "e.g. 14 WEEK LEAGUE" }
           - { label: "Registration URL", name: "registration_url", widget: "string" }
           - { label: "Contact Email", name: "contact_email", widget: "string" }
           - { label: "Facebook URL", name: "facebook_url", widget: "string" }

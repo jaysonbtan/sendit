@@ -67,8 +67,8 @@
   position: relative;
   display: grid;
   place-items: center;
+  grid-template-columns: minmax(0, 1fr);
   max-height: var(--hero-art-max-height);
-  padding: 0 1.25rem;
   overflow: hidden;
   background-color: #030203;
 }
@@ -85,7 +85,7 @@
   justify-self: center;
   align-self: center;
   width: min(
-    100vw,
+    100%,
     var(--hero-art-max),
     calc(var(--hero-art-max-height) * 3122 / 1456)
   );
@@ -109,7 +109,7 @@
   justify-self: center;
   align-self: center;
   width: min(
-    100vw,
+    100%,
     var(--hero-art-max),
     calc(var(--hero-art-max-height) * 3122 / 1456)
   );
@@ -145,7 +145,8 @@
   flex-direction: column;
   align-items: center;
   gap: 1.5rem;
-  max-width: 29rem;
+  max-width: 34rem;
+  padding: 0 var(--container-padding);
   text-align: center;
 }
 
@@ -175,6 +176,7 @@
   line-height: var(--text-hero-tagline-line);
   letter-spacing: var(--text-hero-tagline-tracking);
   color: var(--color-text-primary);
+  text-wrap: balance;
 }
 
 /* Buttons */
@@ -185,7 +187,7 @@
   min-height: 3rem;
   padding: 0.75rem 1.25rem;
   border: none;
-  border-radius: var(--radius-pill);
+  border-radius: var(--radius-button);
   font-family: var(--font-family-body);
   font-size: var(--text-body-lg-size);
   font-weight: var(--text-body-lg-strong-weight);
@@ -220,7 +222,7 @@
 
 .btn--secondary:hover {
   color: var(--color-text-primary);
-  border-color: var(--color-text-secondary);
+  border-color: color-mix(in srgb, var(--color-border-primary) 78%, var(--color-text-secondary));
 }
 
 .btn--disabled {
@@ -291,10 +293,18 @@
 
 /* League cards */
 .league-card-grid {
-  display: grid;
-  grid-template-columns: repeat(3, minmax(0, 1fr));
-  gap: 2rem;
+  --league-columns: 3;
+  --league-gap: 2rem;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: var(--league-gap);
   width: 100%;
+}
+
+.league-card-grid > .league-card-home {
+  flex: 0 0 calc((100% - (var(--league-columns) - 1) * var(--league-gap)) / var(--league-columns));
+  min-width: 0;
 }
 
 .league-card-home {
@@ -565,15 +575,13 @@
 
 @media (min-width: 75rem) {
   .home-hero {
-    padding-left: 0;
-    padding-right: 0;
     --hero-art-scale: 1.08;
   }
 }
 
 @media (max-width: 1024px) {
   .league-card-grid {
-    grid-template-columns: repeat(2, minmax(0, 1fr));
+    --league-columns: 2;
   }
 
   .contact-card-grid {
@@ -583,11 +591,22 @@
 
 @media (max-width: 768px) {
   .league-card-grid {
-    grid-template-columns: 1fr;
+    --league-columns: 1;
   }
 
   .home-hero {
-    padding: 0 1.25rem;
+    max-height: none;
+  }
+
+  .home-hero__bg,
+  .home-hero::after {
+    align-self: end;
+  }
+
+  /* Percentage padding resolves against hero width, so this tracks the art height (width × 1456/3122);
+     it lands the button's centre ~31% down the art, in the gap between the players. */
+  .home-hero__content {
+    padding-bottom: calc(100% * 1456 / 3122 * 0.69 - 1.5rem);
   }
 
   .home-hero__tagline {

@@ -7,7 +7,7 @@ A dark-themed, responsive static website for Send It Athletics volleyball league
 | Page | URL | Description |
 |------|-----|-------------|
 | Home | `/` | Intro, season info, latest announcements |
-| Leagues | `/leagues.html` | League cards, dates, registration link |
+| Leagues | `/leagues.html` | League cards, registration link |
 | Announcements | `/blog.html` | Blog / news index |
 | Contact | `/contact.html` | Facebook, email, registration |
 | CMS Admin | `/admin/` | Content editor (requires OAuth setup) |
@@ -153,7 +153,7 @@ The person editing content must:
 
 | Collection | Edits |
 |------------|-------|
-| **Site Settings** | Season name/dates, registration URL, contact email, Facebook URL, home tagline |
+| **Site Settings** | Season name, registration URL, contact email, Facebook URL, home tagline |
 | **Leagues** | Format, location, day, time, open/full status, display order |
 | **Announcements** | Title, date, excerpt, body (Markdown) |
 

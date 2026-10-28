@@ -15,12 +15,6 @@ permalink: /leagues.html
   <div class="container">
     <div class="leagues-header">
       <span class="leagues-season">{{ site.data.site.season_name }}</span>
-      <p class="leagues-dates">{{ site.data.site.season_days }}</p>
-      <p class="leagues-range">
-        Starts: <strong>{{ site.data.site.season_start }}</strong> &bull;
-        Ends: <strong>{{ site.data.site.season_end }}</strong>
-      </p>
-      <p class="leagues-range">{{ site.data.site.league_duration }}</p>
     </div>
 
   {% assign sorted_leagues = site.leagues | sort: 'order' %}
