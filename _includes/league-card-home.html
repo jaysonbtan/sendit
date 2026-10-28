@@ -28,7 +28,7 @@
     {% if league_status == 'closed' %}
     <span class="btn btn--disabled btn--block" aria-disabled="true">Registration Closed</span>
     {% elsif league_status == 'upcoming' %}
-    <span class="btn btn--disabled btn--block" aria-disabled="true">{% if league.opens_on %}Registration Opens {{ league.opens_on | date: "%b %-d" }}{% else %}Registration Opens Soon{% endif %}</span>
+    <span class="btn btn--disabled btn--block" aria-disabled="true">{% if league.opens_on and league.opens_on != "" %}Registration Opens {{ league.opens_on | date: "%b %-d" }}{% else %}Registration Opens Soon{% endif %}</span>
     {% elsif league_status == 'waitlist' %}
     <a href="{{ league_registration_url }}" class="btn btn--secondary btn--block" target="_blank" rel="noopener noreferrer">Join Waitlist</a>
     {% else %}
