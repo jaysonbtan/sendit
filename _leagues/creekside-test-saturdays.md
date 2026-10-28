@@ -1,10 +1,10 @@
 ---
-title: Creekside Test Saturdays
+title: Creekside Fridays
 type: Co-Ed 6's
-date_range: Oct 31 - Dec 5
-time: 5:15 - 9:00 pm
+date_range: Jan 8 - Apr 16
+time: 8:45 - 10:45 pm
 location: Creekside
-status: open
+status: closed
 registration_url: https://google.com
-order: 1
+order: 2
 ---
