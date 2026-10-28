@@ -9,3 +9,15 @@
 .CMS_Table_body-row:hover {
   background: color-mix(in srgb, var(--primary-main) 15%, var(--background-light));
 }
+
+/* Dropdown menus (relation + select widgets) — lift off the editor background */
+.CMS_Autocomplete_options,
+.CMS_Select_popper {
+  background: var(--background-light);
+  border: 1px solid var(--background-divider);
+  box-shadow: 0 8px 24px rgb(0 0 0 / 0.6);
+}
+
+.CMS_Autocomplete_option-selected {
+  background: color-mix(in srgb, var(--text-primary) 8%, var(--background-light));
+}
