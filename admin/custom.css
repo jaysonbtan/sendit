@@ -10,6 +10,11 @@
   background: color-mix(in srgb, var(--primary-main) 15%, var(--background-light));
 }
 
+/* Field hints — site text-secondary; CMS hover/focus/error colours still override */
+.CMS_Hint_root {
+  color: #a3a3a3;
+}
+
 /* Dropdown menus (relation + select widgets) — lift off the editor background */
 .CMS_Autocomplete_options,
 .CMS_Select_popper {
