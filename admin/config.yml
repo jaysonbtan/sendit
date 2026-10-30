@@ -8,10 +8,10 @@ backend:
 media_folder: "assets/images/uploads"
 public_folder: "/assets/images/uploads"
 
-site_url: https://jaysonbtan.github.io/sendit
-display_url: https://jaysonbtan.github.io/sendit
-logo_url: https://jaysonbtan.github.io/sendit/assets/images/home/sendit-logo.svg
-logo_link: https://jaysonbtan.github.io/sendit
+site_url: https://www.senditathletics.com
+display_url: https://www.senditathletics.com
+logo_url: https://www.senditathletics.com/assets/images/home/sendit-logo.svg
+logo_link: https://www.senditathletics.com
 
 theme:
   include_built_in_themes: false

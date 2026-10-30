@@ -1,7 +1,7 @@
 title: Send It Athletics
 description: Volleyball leagues in the greater Vancouver area. Co-ed 6's and recreational play.
-url: "https://jaysonbtan.github.io"
-baseurl: "/sendit"
+url: "https://www.senditathletics.com"
+baseurl: ""
 
 markdown: kramdown
 kramdown:
