@@ -599,6 +599,10 @@
     --league-columns: 1;
   }
 
+  .contact-card-grid {
+    gap: 1rem;
+  }
+
   .home-hero {
     max-height: none;
   }
@@ -632,7 +636,18 @@
     white-space: normal;
   }
 
+  .home-cta__container {
+    padding-inline: 0;
+  }
+
+  .home-cta__visual {
+    min-height: 0;
+  }
+
   .home-cta__text {
+    width: 100%;
+    min-width: 0;
+    box-sizing: border-box;
     white-space: normal;
   }
 }
