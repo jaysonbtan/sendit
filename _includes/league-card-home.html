@@ -30,7 +30,7 @@
     {% elsif league_status == 'upcoming' %}
     {% assign opens_label = league.opens_on | strip %}
     {% if opens_label == "" %}{% assign opens_label = 'Soon' %}{% endif %}
-    <span class="btn btn--disabled btn--block btn--wrap" aria-disabled="true">Registration Opens {{ opens_label }}</span>
+    <a href="{{ league_registration_url }}" class="btn btn--secondary btn--block btn--wrap" target="_blank" rel="noopener noreferrer">Registration Opens {{ opens_label }}</a>
     {% elsif league_status == 'waitlist' %}
     <a href="{{ league_registration_url }}" class="btn btn--secondary btn--block" target="_blank" rel="noopener noreferrer">Join Waitlist</a>
     {% else %}
