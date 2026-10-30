@@ -5,7 +5,10 @@ title: Home
 {% assign featured_post = site.posts | first %}
 
 <section class="home-hero" aria-label="Introduction">
-  <img class="home-hero__bg" src="{{ '/assets/images/home/hero-bg.png' | relative_url }}" alt="" width="3122" height="1456" decoding="async">
+  <picture class="home-hero__picture">
+    <source media="(max-width: 768px)" srcset="{{ '/assets/images/home/hero-mobile.png' | relative_url }}">
+    <img class="home-hero__bg" src="{{ '/assets/images/home/hero-bg.png' | relative_url }}" alt="" width="3122" height="1456" decoding="async">
+  </picture>
   <div class="home-hero__content">
     <div class="home-hero__brand">
       <img class="home-hero__logo" src="{{ '/assets/images/home/sendit-logo.svg' | relative_url }}" alt="" width="160" height="160">
@@ -72,7 +75,9 @@ title: Home
           <p class="contact-card-home__value">{{ site.data.site.contact_email }}</p>
         </div>
         <button type="button" class="contact-card-home__action" data-copy="{{ site.data.site.contact_email }}" aria-label="Copy email address">
-          {% include lucide-icon.html name="copy" size=24 class="icon-action" %}
+          <span class="contact-card-home__copied">Copied</span>
+          {% include lucide-icon.html name="copy" size=24 class="icon-action icon-action--copy" %}
+          {% include lucide-icon.html name="check" size=24 class="icon-action icon-action--check" %}
         </button>
       </div>
       <a href="{{ site.data.site.facebook_url }}" class="contact-card-home" target="_blank" rel="noopener noreferrer">
