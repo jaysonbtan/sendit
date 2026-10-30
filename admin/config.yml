@@ -96,16 +96,16 @@ collections:
           - { label: "Upcoming", value: "upcoming" }
           - { label: "Waitlist", value: "waitlist" }
           - { label: "Closed", value: "closed" }
-      - label: "Registration Opens On"
+      - label: "Registration Opens"
         name: "opens_on"
         widget: "datetime"
-        format: "yyyy-MM-dd"
+        format: "yyyy-MM-dd HH:mm"
         date_format: "MMM d, yyyy"
-        time_format: false
+        time_format: "h:mm a"
         picker_utc: true
         default: ""
         required: false
-        hint: "Shown on the card as “Registration Opens …” while the league is Upcoming"
+        hint: "Date and time registration opens, e.g. Nov 2, 2026 at 5:00 PM. Leave the time at 12:00 AM to show just the date."
         condition: { field: "status", value: "upcoming" }
       - { label: "Registration Link", name: "registration_url", widget: "string", hint: "Google Form or external registration URL" }
       - { label: "Display Order", name: "order", widget: "number", value_type: "int", min: 1, default: 1 }

@@ -28,7 +28,21 @@
     {% if league_status == 'closed' %}
     <span class="btn btn--disabled btn--block" aria-disabled="true">Registration Closed</span>
     {% elsif league_status == 'upcoming' %}
-    <span class="btn btn--disabled btn--block" aria-disabled="true">{% if league.opens_on and league.opens_on != "" %}Registration Opens {{ league.opens_on | date: "%b %-d" }}{% else %}Registration Opens Soon{% endif %}</span>
+    {% assign opens_label = 'Soon' %}
+    {% if league.opens_on and league.opens_on != "" %}
+      {% assign opens_label = league.opens_on | date: "%b %-d" %}
+      {% assign opens_hm = league.opens_on | date: "%H:%M" %}
+      {% if opens_hm != "00:00" %}
+        {% assign opens_minutes = league.opens_on | date: "%M" %}
+        {% if opens_minutes == "00" %}
+          {% assign opens_time = league.opens_on | date: "%-l %p" %}
+        {% else %}
+          {% assign opens_time = league.opens_on | date: "%-l:%M %p" %}
+        {% endif %}
+        {% assign opens_label = opens_label | append: ' at ' | append: opens_time %}
+      {% endif %}
+    {% endif %}
+    <span class="btn btn--disabled btn--block btn--wrap" aria-disabled="true">Registration Opens <span class="btn__nowrap">{{ opens_label }}</span></span>
     {% elsif league_status == 'waitlist' %}
     <a href="{{ league_registration_url }}" class="btn btn--secondary btn--block" target="_blank" rel="noopener noreferrer">Join Waitlist</a>
     {% else %}
