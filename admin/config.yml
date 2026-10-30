@@ -98,14 +98,10 @@ collections:
           - { label: "Closed", value: "closed" }
       - label: "Registration Opens"
         name: "opens_on"
-        widget: "datetime"
-        format: "yyyy-MM-dd HH:mm"
-        date_format: "MMM d, yyyy"
-        time_format: "h:mm a"
-        picker_utc: true
+        widget: "string"
         default: ""
         required: false
-        hint: "Date and time registration opens, e.g. Nov 2, 2026 at 5:00 PM. Leave the time at 12:00 AM to show just the date."
+        hint: "Shown after “Registration Opens” on the card, e.g. Nov 2 at 5 PM. Leave blank to show “Registration Opens Soon”."
         condition: { field: "status", value: "upcoming" }
       - { label: "Registration Link", name: "registration_url", widget: "string", hint: "Google Form or external registration URL" }
       - { label: "Display Order", name: "order", widget: "number", value_type: "int", min: 1, default: 1 }

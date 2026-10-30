@@ -5,7 +5,7 @@ date_range: Jan 8 - Apr 16
 time: 8:45 - 10:45 pm
 location: Creekside
 status: upcoming
-opens_on: 2026-11-02
+opens_on: "Nov 2"
 registration_url: https://google.com
 order: 2
 ---

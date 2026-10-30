@@ -236,13 +236,8 @@
 }
 
 .btn--wrap {
-  flex-wrap: wrap;
-  column-gap: 0.3em;
   text-align: center;
-}
-
-.btn__nowrap {
-  white-space: nowrap;
+  text-wrap: balance;
 }
 
 /* Announcement card */
