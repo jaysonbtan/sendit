@@ -458,15 +458,6 @@
   color: var(--color-text-secondary);
 }
 
-.contact-card-home__copied {
-  display: none;
-  font-family: var(--font-family-body);
-  font-size: var(--text-body-lg-size);
-  font-weight: var(--text-body-lg-strong-weight);
-  line-height: 1;
-  white-space: nowrap;
-}
-
 .contact-card-home__action .icon-action--check {
   display: none;
 }
@@ -474,12 +465,10 @@
 .contact-card-home__action.is-copied,
 .contact-card-home:hover .contact-card-home__action.is-copied,
 .contact-card-home:hover .contact-card-home__action.is-copied .icon-action,
-.contact-card-home__action.is-copied .contact-card-home__copied,
 .contact-card-home__action.is-copied .icon-action--check {
   color: #3ddc84;
 }
 
-.contact-card-home__action.is-copied .contact-card-home__copied,
 .contact-card-home__action.is-copied .icon-action--check {
   display: block;
 }
